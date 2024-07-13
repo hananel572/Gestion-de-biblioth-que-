@@ -1,0 +1,83 @@
+#ajouter un livre
+#rechercher livre
+#supprimer un livre
+#afficher un livre
+#emprunter
+#retourner livre
+
+from livre import AjouterLivre
+
+def menu_principale():
+    print("1. ajouter un livre")
+    print("2. rechercher livre")
+    print("3. supprimer livre")
+    print("4. afficher livre")
+    print("5. empruter livre")
+    print("6. retourner livre")
+    print("Quitter")
+    choix =int(input("selectionnez une option"))
+    return choix
+def main():
+    while True:
+     choix  = menu_principale()
+
+     if choix == 1:
+        def AjouterLivre():
+            disponibleLivre = True
+            idlivre = int(input("saisir l'Id du livre"))
+            TitreLivre = input("saisir le nom du livre")
+            AuteurLivre = input("saisir l'auteur du livrez")
+            genreLivre = input("saisir le genre du livre")        
+     elif choix == 2:
+        def RechercherUnLivre_par_auteur(livre):
+           for livre in catalogue:
+             if livre in livre.auteur.lower() == auteur.lower():
+                return livre
+           return None
+        def RechercherUnLivre_par_titre(livre):
+           for livre in catalogue:
+             if livre.auteur.lower() == auteur.lower():
+                return livre
+           return None
+        def RechercherUnLivre_par_genre(livre):
+           for livre in catalogue:
+             if livre.genre.lower() == genre.lower():
+                return livre
+           return None 
+     elif choix == 3:
+         def SupprimerUnLivre(livre):
+            for index, livre_catalogue in enumerate(catalogue):
+               if livre_catalogue == livre:
+                 del catalogue[index]
+                 print(f"Livre supprimé avec succès",livre)
+                 return
+                 print(f"Livre non trouvé",livre)
+     elif choix == 4:
+         def AfficherUnLivre(livre):
+             if livre:
+                print(f"\nDetails du livre:")
+                print(f"titre",livre.titre)
+                print(f"auteur",livre.auteur)
+                print(f"genre",livre.genre)
+                print(f"pages",livre.page)
+                print(f"etat",livre.etat)
+             else:
+                print("livre non trouvé.")
+     elif choix == 5:
+        def EmprunterUnLivre(livre):
+            if livre.etat == "disponible":
+               livre.etat == "emprunté "
+               print(f"Livre emprunté avec succès",livre)
+            else:
+               print(f"Le livre n'est pas disponible",livre)
+     elif choix == 6:
+        def RetournerUnLivre(livre):
+            if livre.etat == "disponible":
+               livre.etat == "emprunté "
+               print(f"Livre retourné avec succès",livre)
+            else:
+               print(f"Le livre n'est pas emprunté",livre)
+     elif choix == 7:
+        def Quitter():
+            print("\nAu revoir et merci d'avoir utilisé la bibliotheque ")
+            exit()
