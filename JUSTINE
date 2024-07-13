@@ -1,0 +1,11 @@
+elif choix == 6:
+        def RetournerUnLivre(livre):
+            if livre.etat == "disponible":
+               livre.etat == "emprunté "
+               print(f"Livre retourné avec succès",livre)
+            else:
+               print(f"Le livre n'est pas emprunté",livre)
+     elif choix == 7:
+        def Quitter():
+            print("\nAu revoir et merci d'avoir utilisé la bibliotheque ")
+            ex
